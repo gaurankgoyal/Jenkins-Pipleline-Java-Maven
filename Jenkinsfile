@@ -1,13 +1,12 @@
 @Library('github.com/gaurankgoyal/Jenkins-Shared-Lib') _
 
 mavenBuild {
-    environment = 'golang:1.5.0'
+    environment = 'maven:3-alpine'
     mainScript = '''
-go version
-echo "hello"
+mvn -B -DskipTests clean package
 '''
     postScript = '''
-echo "hello again"
+echo "mvn test"
 '''
 }
 
